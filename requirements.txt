@@ -1,0 +1,7 @@
+# database and dbt requirements
+dbt-duckdb
+
+# additional packages for data generation
+Faker
+pandas
+tqdm

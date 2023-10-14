@@ -1,0 +1,7 @@
+dbtips:
+  target: duckdb
+  
+  outputs:
+    duckdb:
+      type: duckdb
+      path: 'duck.db'

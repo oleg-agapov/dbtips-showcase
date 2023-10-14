@@ -1,0 +1,37 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+
+Table users {
+  id integer [primary key]
+  first_name varchar
+  last_name varchar
+  email varchar
+  created_at timestamp
+  country_code varchar
+}
+
+Table products {
+  id integer [primary key]
+  name varchar
+  category varchar
+  price_usd float
+}
+
+Table orders {
+  id integer [primary key]
+  purchased_at timestamp
+  user_id integer
+  total_price float
+}
+
+Table order_items {
+  order_id integer
+  product_id integer
+  quantity int
+  price_usd float
+}
+
+Ref: orders.user_id > users.id
+Ref: order_items.order_id > orders.id
+Ref: order_items.product_id > products.id
